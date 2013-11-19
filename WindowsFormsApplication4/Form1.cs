@@ -25,39 +25,40 @@ namespace WindowsFormsApplication4
 
     class Mensagem
     {
+        
         //ATRIBUTOS
-        Note nota;
-        int oitava;
-        int BPM;
-        bool repetição;
-        Mensagem próxima;
+        private Note nota;
+        private int oitava;
+        private int BPM;
+        private bool repetição;
+        //Mensagem próxima;
 
         //SETS
-        void setNota(char letra)
+        public void setNota(char letra)
         {
             nota = new Note(letra);
         }
-        void setOitava(int novaOitava)
+        public void setOitava(int novaOitava)
         {
             oitava = novaOitava;
         }
-        void setBPM(int novoBPM)
+        public void setBPM(int novoBPM)
         {
             BPM = novoBPM;
         }
-        void setRepetição(bool repete)
+        public void setRepetição(bool repete)
         {
             repetição = repete;
         }
 
         //GETS
-        Pitch getPitch()
+        public Pitch getPitch()
         {
             Pitch pitch;
             pitch = nota.PitchInOctave(oitava);
             return (pitch);
         }
-        int getBPM()
+        public int getBPM()
         {
             return BPM;
         }
