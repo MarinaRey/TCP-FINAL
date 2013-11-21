@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Midi;
+using Decoder;
 
 namespace WindowsFormsApplication4
 {
@@ -21,6 +22,28 @@ namespace WindowsFormsApplication4
         {
 
         }
+
+        private void loadButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text Files (.txt)|*.txt";
+            
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.StreamReader sr = new
+                   System.IO.StreamReader(dialog.FileName);
+
+                textBox.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 
     class Mensagem
@@ -31,7 +54,6 @@ namespace WindowsFormsApplication4
         private int oitava;
         private int BPM;
         private bool repetição;
-        //Mensagem próxima;
 
         //SETS
         public void setNota(char letra)
