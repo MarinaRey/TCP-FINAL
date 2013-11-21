@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Midi;
-using Decoder;
 
 namespace WindowsFormsApplication4
 {
